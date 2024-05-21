@@ -4,13 +4,24 @@ h1 {
     text-transform: uppercase;
 }
 
-.tv-sales {
-    color: green;
-    border: 2px solid currentColor;
+.dashboard {
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
 }
 
+.tv-sales {
+    color: green;
+    border: 2px solid currentColor;
+}
 
+.stock {
+    color: blue;
+    border: 2px solid currentColor;
+}
+
+.salesGoal {
+    color: red;
+    border: 2px solid currentColor;
+}
 
