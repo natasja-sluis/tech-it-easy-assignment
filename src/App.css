@@ -66,3 +66,22 @@ h2 {
 .icons {
     max-height: 25px;
 }
+
+.sort-tvs-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort-button-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.sort-button {
+    padding: 20px;
+    color: white;
+    background-color: darkslategrey;
+    border-radius: 30px;
+    width: 280px;
+}
