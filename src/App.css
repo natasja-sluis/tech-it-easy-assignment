@@ -4,7 +4,22 @@ h1 {
     text-transform: uppercase;
 }
 
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
@@ -25,3 +40,29 @@ h1 {
     border: 2px solid currentColor;
 }
 
+.best-selling-tv-container {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.best-selling-tv-image {
+    height: 100%;
+    flex-grow: 0;
+}
+
+.best-selling-tv-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-best-selling-tv, .price-best-selling-tv, .screen-best-selling-tv {
+    font-size: 1.5rem;
+    text-align: left;
+   flex-grow: 1;
+}
+
+.icons {
+    max-height: 25px;
+}
