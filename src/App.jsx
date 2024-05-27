@@ -54,6 +54,11 @@ function App() {
                 <button className="sort-button" type="button" onClick={handleClick}>Meest geschikt voor sport eerst
                 </button>
                 </div>
+                <ul className="brand-name-list">
+                    {inventory.map((inventory) => {
+                        return <li key={inventory.type}>{inventory.brand}</li>
+                    })}
+                </ul>
             </article>
         </>
     )

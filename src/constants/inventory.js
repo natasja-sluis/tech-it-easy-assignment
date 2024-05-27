@@ -328,4 +328,59 @@ export let inventory = [
     },
 ];
 
-
+// // Opdracht 1A
+// const tvNames = inventory.map((inventory) => {
+//     return inventory.brand + inventory.name;
+// })
+//
+// // console.log(tvNames);
+//
+// // Opdracht 1B
+//
+// const stockSold = inventory.filter((inventory) => {
+//     return (inventory.originalStock - inventory.sold === 0)
+// })
+//
+// // console.log(stockSold);
+//
+// // Opdracht 1C
+//
+// const tv = inventory.find((inventory) => {
+//     return inventory.type === 'NH3216SMART'
+// })
+// //
+// // console.log(tv);
+//
+// // Opdracht 1D
+//
+// const suitableForSports = inventory.map((inventory) => {
+//     if (inventory.refreshRate >= 100) {
+//         return inventory.type + inventory.name + ',' + ' suitable: true'
+//     } else {
+//         return inventory.type + inventory.name + ',' + ' suitable: false';
+//     }
+// })
+//
+// console.log(suitableForSports);
+//
+// // Opdracht 1E
+//
+// const BigTvs = inventory.filter((inventory) => {
+//     const has65OrLarger = inventory.availableSizes.find((availableSize) => {
+//         return availableSize >= 65
+//     })
+//     return has65OrLarger;
+// })
+//
+// console.log(BigTvs);
+//
+// //Opdracht 1F
+//
+// const ambiLight = inventory.filter((inventory) => {
+//     const hasAmbilightOption = inventory.options.find((option) => {
+//         return option.name === 'ambiLight' && option.applicable
+//     })
+//     return hasAmbilightOption;
+// })
+//
+// console.log(ambiLight);
