@@ -15,8 +15,9 @@ function App() {
     const stock = calculateStock(inventory)
     const salesGoal = calculateSalesGoals(inventory);
     const nameBestseller = generateBestsellerName(bestSellingTv);
-    const price = generatePrice(bestSellingTv);
-    const availableScreenSizes = generateScreenSize(bestSellingTv);
+    const priceBestseller = generatePrice(bestSellingTv);
+    const availableScreenSizesBestseller = generateScreenSize(bestSellingTv);
+
 
     function handleClick() {
         console.log("button clicked!");
@@ -32,12 +33,14 @@ function App() {
                 <p className="dashboard salesGoal">Current Sales Goal: {salesGoal}</p>
             </div>
             <h2>Best verkochte tv</h2>
-            <article className="best-selling-tv-container">
-                <img className="best-selling-tv-image" src={bestSellingTv.sourceImg} alt="tv"/>
-                <div className="best-selling-tv-details">
-                    <p className="name-best-selling-tv">{nameBestseller}</p>
-                    <p className="price-best-selling-tv">{price}</p>
-                    <p className="screen-best-selling-tv">{availableScreenSizes}</p>
+            <article className="overview-tv-container">
+                <div className="tv-image-container">
+                    <img className="tv-image" src={bestSellingTv.sourceImg} alt="tv"/>
+                </div>
+                <div className="tv-details">
+                    <p className="name-tv">{nameBestseller}</p>
+                    <p className="price-tv">{priceBestseller}</p>
+                    <p className="screen-tv">{availableScreenSizesBestseller}</p>
                     <p><img className="icons" src="/src/assets/check.png" alt="check-icon"/> wifi <img className="icons"
                                                                                                        src="/src/assets/minus.png"
                                                                                                        alt="minus-icon"/> speech
@@ -49,10 +52,10 @@ function App() {
             <article className="sort-tvs-container">
                 <h2>Alle tvs</h2>
                 <div className="sort-button-section">
-                <button className="sort-button" type="button" onClick={handleClick}>Meest verkocht eerst</button>
-                <button className="sort-button" type="button" onClick={handleClick}>Goedkoopste eerst</button>
-                <button className="sort-button" type="button" onClick={handleClick}>Meest geschikt voor sport eerst
-                </button>
+                    <button className="sort-button" type="button" onClick={handleClick}>Meest verkocht eerst</button>
+                    <button className="sort-button" type="button" onClick={handleClick}>Goedkoopste eerst</button>
+                    <button className="sort-button" type="button" onClick={handleClick}>Meest geschikt voor sport eerst
+                    </button>
                 </div>
                 <ul className="brand-name-list">
                     {inventory.map((inventory) => {
@@ -60,6 +63,19 @@ function App() {
                     })}
                 </ul>
             </article>
+            {inventory.map((inventory) => {
+                return <article key={inventory.type} className="overview-tv-container">
+                    <div className="tv-image-container">
+                        <img className="tv-image" src={inventory.sourceImg} alt="tv"/>
+                    </div>
+                    <div className="tv-details">
+                        <p className="name-tv"> {generateBestsellerName(inventory)} </p>
+                        <p className="price-tv">{generatePrice(inventory)}</p>
+                        <p className="screen-tv">{generateScreenSize(inventory)}</p>
+                    </div>
+                </article>
+            })
+            }
         </>
     )
 }
