@@ -1,6 +1,5 @@
-import {bestSellingTv} from "../constants/inventory.js";
 
-export default function generateScreenSize() {
+export default function generateScreenSize(bestSellingTv) {
     let availableScreenSizes = "";
 
     for (let i = 0; i < bestSellingTv.availableSizes.length; i++) {
