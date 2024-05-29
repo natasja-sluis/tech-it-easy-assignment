@@ -70,7 +70,7 @@ h2 {
     text-align: left;
 }
 
-.icons {
+.icon {
     max-height: 25px;
 }
 
@@ -83,6 +83,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 8px;
 }
 
 .sort-button {
@@ -97,5 +98,12 @@ h2 {
     list-style-type: none;
     font-size: 1.5rem;
 }
+
+.options-list {
+    font-size: 1rem;
+    list-style-type: none;
+}
+
+
 
 

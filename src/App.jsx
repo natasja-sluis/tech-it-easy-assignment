@@ -19,8 +19,24 @@ function App() {
     const availableScreenSizesBestseller = generateScreenSize(bestSellingTv);
 
 
-    function handleClick() {
-        console.log("button clicked!");
+    function handleSortMostSold() {
+       const mostSoldTv = inventory.sort((a, b) => b.sold - a.sold);
+
+        return console.log(mostSoldTv);
+    }
+
+    function handleSortCheapestFirst() {
+        const cheapestTv = inventory.sort((a, b) => a.price - b.price);
+
+        return console.log(cheapestTv);
+
+    }
+
+    function handleSortSuitableSports() {
+        const mostSuitableForSports = inventory.sort((a, b) => b.refreshRate - a.refreshRate);
+
+        return console.log(mostSuitableForSports);
+
     }
 
     return (
@@ -41,27 +57,27 @@ function App() {
                     <p className="name-tv">{nameBestseller}</p>
                     <p className="price-tv">{priceBestseller}</p>
                     <p className="screen-tv">{availableScreenSizesBestseller}</p>
-                    <p><img className="icons" src="/src/assets/check.png" alt="check-icon"/> wifi <img className="icons"
+                    <p><img className="icon" src="/src/assets/check.png" alt="check-icon"/> wifi <img className="icon"
                                                                                                        src="/src/assets/minus.png"
                                                                                                        alt="minus-icon"/> speech
-                        <img className="icons" src="/src/assets/check.png" alt="check-icon"/> hdr
-                        <img className="icons" src="/src/assets/minus.png" alt="minus-icon"/> bluetooth <img
-                            className="icons" src="/src/assets/minus.png" alt="minus-icon"/> ambilight </p>
+                        <img className="icon" src="/src/assets/check.png" alt="check-icon"/> hdr
+                        <img className="icon" src="/src/assets/minus.png" alt="minus-icon"/> bluetooth <img
+                            className="icon" src="/src/assets/minus.png" alt="minus-icon"/> ambilight </p>
                 </div>
             </article>
             <article className="sort-tvs-container">
                 <h2>Alle tvs</h2>
-                <div className="sort-button-section">
-                    <button className="sort-button" type="button" onClick={handleClick}>Meest verkocht eerst</button>
-                    <button className="sort-button" type="button" onClick={handleClick}>Goedkoopste eerst</button>
-                    <button className="sort-button" type="button" onClick={handleClick}>Meest geschikt voor sport eerst
-                    </button>
-                </div>
                 <ul className="brand-name-list">
                     {inventory.map((inventory) => {
                         return <li key={inventory.type}>{inventory.brand}</li>
                     })}
                 </ul>
+                <div className="sort-button-section">
+                    <button className="sort-button" type="button" onClick={handleSortMostSold}>Meest verkocht eerst</button>
+                    <button className="sort-button" type="button" onClick={handleSortCheapestFirst}>Goedkoopste eerst</button>
+                    <button className="sort-button" type="button" onClick={handleSortSuitableSports}>Meest geschikt voor sport eerst
+                    </button>
+                </div>
             </article>
             {inventory.map((inventory) => {
                 return <article key={inventory.type} className="overview-tv-container">
@@ -72,6 +88,15 @@ function App() {
                         <p className="name-tv"> {generateBestsellerName(inventory)} </p>
                         <p className="price-tv">{generatePrice(inventory)}</p>
                         <p className="screen-tv">{generateScreenSize(inventory)}</p>
+
+                        <ul className="options-list">
+                                {inventory.options.map((option) => {
+                                    return <li key={option.name}> {option.applicable ?
+                                        <img className="icon" src="/src/assets/check.png" alt="available"/> :
+                                        <img className="icon" src="/src/assets/minus.png"
+                                             alt="not available"/>} {option.name}</li>
+                                })}
+                        </ul>
                     </div>
                 </article>
             })
