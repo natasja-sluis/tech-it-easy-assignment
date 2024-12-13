@@ -1,0 +1,117 @@
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tv-sales {
+    color: green;
+    border: 2px solid currentColor;
+}
+
+.stock {
+    color: blue;
+    border: 2px solid currentColor;
+}
+
+.salesGoal {
+    color: red;
+    border: 2px solid currentColor;
+}
+
+.overview-tv-container {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px;
+    gap: 32px;
+}
+
+.tv-image-container {
+    flex-grow: 0;
+    flex-basis: 500px;
+    padding: 8px;
+}
+
+.tv-out-of-stock-container {
+    flex-basis: 300px;
+    padding: 8px;
+    flex-grow: 0;
+}
+
+
+.tv-image, .out-of-stock-image {
+    width: 100%;
+}
+
+.tv-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-tv, .price-tv, .screen-tv {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.icon {
+    max-height: 25px;
+}
+
+.sort-tvs-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort-button-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 8px;
+}
+
+.sort-button {
+    padding: 20px;
+    color: white;
+    background-color: darkslategrey;
+    border-radius: 30px;
+    width: 280px;
+}
+
+.brand-name-list {
+    list-style-type: none;
+    font-size: 1.5rem;
+}
+
+.options-list {
+    font-size: 1rem;
+    list-style-type: none;
+}
+
+
+
+
